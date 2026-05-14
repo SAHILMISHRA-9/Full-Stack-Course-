@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    
+    flex-wrap: wrap;
+}
+img{
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+h1{
+    text-align: center;
+}

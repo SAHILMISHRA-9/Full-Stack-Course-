@@ -1,0 +1,101 @@
+@font-face {
+    font-family: MyFont;
+    src: url(images/ByteBounce.ttf);
+}
+#header{
+    border-radius: 10px 10px 0 0;
+    font-family: MyFont;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.707);
+    text-align: center;
+    padding: 15px;
+    span{
+        color: rgb(0, 195, 255);
+    }
+    color: white;
+    a{
+        color: white;
+    }
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+    
+}
+#footer{
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.707);
+}
+img{
+    /* margin: 40px 0; */
+    height: 230px;
+    width: 220px;
+}
+#con{
+    margin: 30px 0;
+    /* border: 2px  black; */
+    h2,h3{
+        padding-left:10px ;
+    }
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+
+/*SUBSCRIBE PAGE */
+
+.subscribe-page {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.subscribe-page h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.subscribe-page p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+#subscribe-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+#subscribe-form input {
+    padding: 10px;
+    width: 300px;
+    font-size: 18px;
+}
+
+#subscribe-form button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#subscribe-form button:hover {
+    background-color: black;
+}
+
+.store-image {
+    width: 500px;
+    max-width: 90%;
+    border-radius: 10px;
+}

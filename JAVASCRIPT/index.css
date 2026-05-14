@@ -1,0 +1,32 @@
+.Train{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 400px;
+    background-image: url(maxresdefault.jpg);
+    background-size: cover;
+    border: 2px solid yellow;
+    border-radius: 100px;
+}
+h1,h2{
+    height: 40px;
+    color: rgb(159, 6, 6);
+    background-color: aliceblue;
+}
+#increment-btn{
+    margin: 20px;
+    height: 30px;
+    background-color: rgb(144, 0, 0);
+    color: rgb(252, 252, 252);
+}
+#save-btn{
+    background-color: green;
+    color: aliceblue;
+}
+
+#save-el{
+    color: blue;
+    background-color: bisque;
+}

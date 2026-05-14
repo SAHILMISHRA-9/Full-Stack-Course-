@@ -1,0 +1,43 @@
+body{
+    background-color: rgba(0, 0, 0, 0.789);
+}
+
+#head{
+    color: white;
+}
+#head1{
+    color: rgb(95, 155, 4);
+}
+#content{
+    color: wheat;
+}
+button{
+    margin: 20px 0px 20px 20px;
+    background-color: rgb(40, 65, 2);
+    color: white;
+}
+.head{
+    margin: 30px 0px 20px 20px;
+}
+.pass{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.456);
+}
+#pass1-el{
+    text-align: center;
+    color: aliceblue;
+    margin-left: 20px;
+    background-color: rgb(43, 47, 59);
+    height: 30px;
+    width: 150px;
+}
+#pass2-el{
+    text-align: center;
+    color: aliceblue;
+    background-color: rgb(43, 47, 59);
+    height: 30px;
+    width: 150px;
+}
+

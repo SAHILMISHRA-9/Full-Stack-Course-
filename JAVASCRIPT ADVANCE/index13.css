@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #e5e5e5;
+}
+
+#labels-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.label-card {
+    background: #2f80ed;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.5;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.label-card p {
+    margin: 6px 0;
+}
+
+.label-card p:first-child {
+    font-weight: bold;
+    font-size: 18px;
+}

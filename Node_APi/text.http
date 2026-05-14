@@ -1,0 +1,1 @@
+GET http://localhost:9001/api?continent=Asia&is_open_to_public=true

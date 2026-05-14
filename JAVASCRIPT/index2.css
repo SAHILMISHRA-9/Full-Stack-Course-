@@ -1,0 +1,20 @@
+.Nike{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+img{
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+button{
+    width: 200px;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: white;
+}
+p{
+    color: red;
+}

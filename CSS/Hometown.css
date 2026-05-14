@@ -1,0 +1,77 @@
+.Header{
+    color: rgb(6, 203, 196);
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+
+    height: 400px;
+    width: auto;
+    background-image: url(photo-1617469165786-8007eda3caa7.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+
+    border-radius: 30px 30px 0 0;    
+}
+.Top{
+   background-color: ghostwhite;
+   background: linear-gradient(white,grey);
+   width: auto;
+}
+#Site-Header{
+    text-align: center;
+}
+.Sites{
+    height: 400px;
+    background-color:beige;
+    background-size: cover;
+    display: flex;  
+    justify-content: space-around;
+    margin: 0 auto;
+    border-radius: 0 0 30px 30px;
+}
+.Site-1,.Site-2,.Site-3{
+    display: flex;
+    flex-direction: column;   
+    text-align: center;
+    margin:40px ;
+    height: 200px;
+    width: 200px;
+}
+img{
+    border-radius: 50%; 
+}
+.Guide-Card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin: 40px auto;
+    background: linear-gradient(white,skyblue);
+    width: 400px;
+    height: 300px;
+    border-radius: 50px;
+    border-bottom: 8px solid pink  ;
+}
+#Guide{
+    margin:20px 20px;
+    border-radius: 20%;
+    height: 150px;
+    width: 150px;
+}
+.Guide-Card:hover{
+    transform: scale(1.1);
+}
+.Site-1:hover{
+    transform: scale(1.1);
+}
+.Site-2:hover{
+    transform: scale(1.1);
+}
+.Site-3:hover{
+    transform: scale(1.1);
+}

@@ -1,0 +1,38 @@
+body{
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: aliceblue;
+}
+.header{
+    padding: 15px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(64, 64, 209);
+    gap:20px;
+}
+button{
+    width: fit-content;
+    margin: 0px auto;
+    width: 100px;
+    background-color: white;
+    padding: 10px;
+}
+#input-el{
+    width: 50px;
+    justify-content: center;
+    margin: 0px auto;
+    height: 40px;
+    border: 1px solid plum;
+    background-color: transparent;
+}
+.header1{
+    background-color: darkblue;
+    margin: 10px 0 0 0;
+    width: 90%;
+    height: 100px;
+
+}

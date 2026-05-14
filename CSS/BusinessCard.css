@@ -1,0 +1,28 @@
+body{
+    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.avatar{
+    width: 150px;
+    
+}
+.card{
+    background-color: #ddebf8;
+    border-bottom: 4px solid palevioletred;
+    width: 400px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0 auto;
+    justify-content: space-around;
+    display: flex;
+    padding: 10px;
+}
+.content{
+    color: black;
+    text-align: center;
+    margin: 10px;
+}
+.logo{
+    display: flex;
+    margin: 10px;
+}

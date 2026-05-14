@@ -1,0 +1,37 @@
+.scoreboard{
+    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: rgb(27, 27, 126);
+    border-radius: 20px;
+}
+.scoreboard{
+    display: flex;
+    gap: 120px;
+}
+.score-box{
+    background-color: black;
+    color: rgb(170, 3, 3);
+    padding: 20px 40px;
+    margin :20px 0;
+    justify-content: center;
+    align-content: center;
+    border-radius: 20px;
+    font-size: 70px;
+    font-family: 'Digital-7';
+}
+
+.buttons button{
+    margin: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(27, 27, 126);
+    border: 1px solid white;
+    cursor: pointer;
+    font-family: 'Digital-7';
+}
+@font-face {
+    font-family: 'Digital-7';
+    src: url(digital-7.ttf);
+}
