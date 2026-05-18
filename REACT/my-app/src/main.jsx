@@ -150,6 +150,8 @@
 //   </div>
 // )
 
+
+
 // const h1=document.createElement("h1")
 // h1.textContent="React is great"
 // h1.className="header"
@@ -158,3 +160,38 @@
 // const root = document.getElementById("root");
 // root.appendChild(h1)
 
+
+
+// import { createRoot } from "react-dom/client";
+
+// const root=createRoot(document.getElementById("root"))
+
+// root.render(
+//   <main>
+//     <img src="C:\Full Stack Course\REACT\logo-og.png"/>
+//     <h1>This is another element</h1>
+//   </main>
+// )
+
+
+
+
+// React project (fun facts one)
+
+import {createRoot} from 'react-dom/client'
+
+const root = createRoot(document.getElementById("root"))
+
+root.render(
+  <div>
+    <img src="/vite.svg"/>
+    <h2>Fun Facts about React</h2>
+    <ul>
+      <li>was first released in 2019</li>
+      <li>as orginally created by Jordan Walke</li>
+      <li>Has well over 100k stars on github</li>
+      <li>Is maintained by Meta</li>
+      <li>Powers thousands of enterprise apps,including mobile app</li>
+    </ul>
+  </div>
+)
