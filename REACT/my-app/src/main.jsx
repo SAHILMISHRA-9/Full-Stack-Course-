@@ -190,7 +190,7 @@ root.render(
       <li>was first released in 2019</li>
       <li>as orginally created by Jordan Walke</li>
       <li>Has well over 100k stars on github</li>
-      <li>Is maintained by Meta</li>
+      <li> It is maintained by Meta</li>
       <li>Powers thousands of enterprise apps,including mobile app</li>
     </ul>
   </div>
