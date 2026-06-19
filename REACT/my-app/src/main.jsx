@@ -192,7 +192,7 @@ root.render(
       <li>Has well over 100k stars on github</li>
       <li> It is maintained by Meta</li>
       <li>Powers thousands of enterprise apps,including mobile app</li>
-      <li>I love react</li>
+      <li>I love</li>
     </ul>
   </div>
 )
