@@ -177,14 +177,14 @@
 
 
 // React project (fun facts one)
-
+import './index.css';
 import {createRoot} from 'react-dom/client'
 
 const root = createRoot(document.getElementById("root"))
 
 root.render(
   <div>
-    <img src="/vite.svg"/>
+    <img className='logo' src="/src/assets/react.svg"/>
     <h2>Fun Facts about React</h2>
     <ul>
       <li>was first released in 2019</li>
