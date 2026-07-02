@@ -176,23 +176,24 @@
 
 
 
-// React project (fun facts one)
-import './index.css';
-import {createRoot} from 'react-dom/client'
+import './index.css'
+import {createRoot} from 'react-dom/client';
 
-const root = createRoot(document.getElementById("root"))
+const root=createRoot(document.getElementById("root"));
 
 root.render(
   <div>
-    <img className='logo' src="/src/assets/react.svg"/>
-    <h2>Fun Facts about React</h2>
+    <img className='logo' src='/src/assets/react.svg'/>
+    <h2>Fun facts abouts React</h2>
     <ul>
-      <li>was first released in 2019</li>
-      <li>as orginally created by Jordan Walke</li>
+      <li>Was first relesed in 2019</li>
+      <li>Was originally createdn by John walke</li>
       <li>Has well over 100k stars on github</li>
-      <li> It is maintained by Meta</li>
-      <li>Powers thousands of enterprise apps,including mobile app</li>
-      <li>I love</li>
+      <li>It is maintained by Meta</li>
+      <li>Power thousands of enterprise apps,including mobile apps</li>
+      <li>Provied Virtual DOM</li>
+      
     </ul>
+
   </div>
 )

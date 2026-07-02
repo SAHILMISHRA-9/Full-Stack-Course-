@@ -1,0 +1,9 @@
+1.Where does react put all of the elements I create in JSX when I call 'root.render()'?
+
+ANS.- All the elements I render get put inside the div with the id of "root"
+(or whatever other element I might select when calling createRoot)
+
+2.what would show up in my console If I run this line of code:
+console.log(<h1>Hello world!</h1>)
+
+ANS.- An object(plain javascript object)
