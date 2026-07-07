@@ -3,7 +3,39 @@
 ANS.- All the elements I render get put inside the div with the id of "root"
 (or whatever other element I might select when calling createRoot)
 
+
 2.what would show up in my console If I run this line of code:
 console.log(<h1>Hello world!</h1>)
 
 ANS.- An object(plain javascript object)
+Unlike creatung an HTML element in vanilla DOM JS what gets created 
+from the JSX we have in our react code is a plain JS object that React 
+will use o fill in the view.
+
+
+3.What's wrong with this code:
+...
+root.render(
+    <h1>Hi there</h1>
+    <p>This is my website</p>
+)
+...
+Ans.- We cannout have two sibling elements without a wrapper element
+...
+root.render(
+    <div>
+        <h1>Hi there!</h1>
+        <p>This is my wbesite</p>
+    </div>
+)
+
+
+4.What does it mean for something to be "declaretive" instead of "imperative"
+Ans.- Imperative - means we need to give specific step by step intructions on how to accomplish a task.
+Declarative - means we can write our code to simply "describe" what should show up
+on the page ans allow the rool (react,e.g.) to handle the details on how to put those things on the page.
+
+
+5.Hwat does it means for something to be "composable"?
+Ans.- We have small peices that we can put togehter to make something larger or greater
+than the individual peices themselves

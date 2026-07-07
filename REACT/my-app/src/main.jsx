@@ -176,24 +176,78 @@
 
 
 
+// import './index.css'
+// import {createRoot} from 'react-dom/client';
+
+// const root=createRoot(document.getElementById("root"));
+
+// root.render(
+//   <div>
+//     <img className='logo' src='/src/assets/react.svg'/>
+//     <h2>Fun facts abouts React</h2>
+//     <ul>
+//       <li>Was first relesed in 2019</li>
+//       <li>Was originally createdn by John walke</li>
+//       <li>Has well over 100k stars on github</li>
+//       <li>It is maintained by Meta</li>
+//       <li>Power thousands of enterprise apps,including mobile apps</li>
+//       <li>Provied Virtual DOM</li>
+      
+//     </ul>
+
+//   </div>
+// )
+
+
+// **** CUSTOM COMPONENT **** ///
+
+// import './index.css'
+// import {createRoot} from 'react-dom/client';
+
+// const root=createRoot(document.getElementById("root"));
+
+// root.render(
+//   <TemporaryName/>
+// )
+
+// function TemporaryName(){
+//   return (
+//       <div>
+//         <img className='logo' src='/src/assets/react.svg'/>
+//         <h2>Fun facts abouts React</h2>
+//           <ul>
+//             <li>Was first relesed in 2019</li>
+//             <li>Was originally createdn by John walke</li>
+//             <li>Has well over 100k stars on github</li>
+//             <li>It is maintained by Meta</li>
+//             <li>Power thousands of enterprise apps,including mobile apps</li>
+//             <li>Provied Virtual DOM</li>
+//           </ul>
+//       </div>
+//   )
+// }
+
+
+// Challange 
 import './index.css'
 import {createRoot} from 'react-dom/client';
 
 const root=createRoot(document.getElementById("root"));
 
-root.render(
+function Page(){
+  return(
   <div>
     <img className='logo' src='/src/assets/react.svg'/>
-    <h2>Fun facts abouts React</h2>
-    <ul>
-      <li>Was first relesed in 2019</li>
-      <li>Was originally createdn by John walke</li>
-      <li>Has well over 100k stars on github</li>
-      <li>It is maintained by Meta</li>
-      <li>Power thousands of enterprise apps,including mobile apps</li>
-      <li>Provied Virtual DOM</li>
-      
-    </ul>
-
+    <ol>
+      <li>React is what I building projects in</li>
+      <li>React is what I building projects in</li>
+      <li>React is what I building projects in</li>
+    </ol>
   </div>
+  )
+  
+}
+
+root.render(
+  <Page/>
 )
