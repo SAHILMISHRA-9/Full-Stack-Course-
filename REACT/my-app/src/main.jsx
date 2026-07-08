@@ -228,22 +228,70 @@
 // }
 
 
-// Challange 
+// // Challange 
+// import './index.css'
+// import {createRoot} from 'react-dom/client';
+
+// const root=createRoot(document.getElementById("root"));
+
+// function Page(){
+//   return(
+//   <div>
+//     <header>
+//       <img className='logo' alt='React Image' src='/src/assets/react.svg'/>
+//     </header>
+//     <main>
+//       <h1>Reason why I love react</h1>
+//       <ol>
+//         <li>React is what I building projects in</li>
+//         <li>React is what I building projects in</li>
+//         <li>React is what I building projects in</li>
+//       </ol>
+//       <footer>
+//         <small>@ 20xx <last name here> development. All rights reserved</last></small>
+//       </footer>
+//     </main>
+    
+//   </div>
+//   )
+  
+// }
+
+// root.render(
+//   <Page/>
+// )
+
+
+
+///***Fragment***////
+
+//without fragments the react creates another div element inside already defined div in the html doc
+//with fragments it doesnt and we have not woryy about that
 import './index.css'
+import { Fragment } from 'react';
 import {createRoot} from 'react-dom/client';
 
 const root=createRoot(document.getElementById("root"));
 
 function Page(){
   return(
-  <div>
-    <img className='logo' src='/src/assets/react.svg'/>
-    <ol>
-      <li>React is what I building projects in</li>
-      <li>React is what I building projects in</li>
-      <li>React is what I building projects in</li>
-    </ol>
-  </div>
+    <Fragment>
+        <header>
+          <img className='logo' alt='React Image' src='/src/assets/react.svg'/>
+        </header>
+        <main>
+          <h1>Reason why I love react</h1>
+          <ol>
+            <li>React is what I building projects in</li>
+            <li>React is what I building projects in</li>
+            <li>React is what I building projects in</li>
+          </ol>
+        <footer>
+          <small>@ 20xx <last name here> development. All rights reserved</last></small>
+        </footer>
+        </main>
+    </Fragment>
+  
   )
   
 }
@@ -251,3 +299,7 @@ function Page(){
 root.render(
   <Page/>
 )
+
+//one more way to do without the fragment import thing is
+//using the <></> bracket in place of <Fragment></Fragment> and 
+//not importing the fragment from react
