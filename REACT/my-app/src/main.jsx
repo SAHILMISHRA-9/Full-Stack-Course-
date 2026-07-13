@@ -267,30 +267,68 @@
 
 //without fragments the react creates another div element inside already defined div in the html doc
 //with fragments it doesnt and we have not woryy about that
+// import './index.css'
+// import { Fragment } from 'react';
+// import {createRoot} from 'react-dom/client';
+
+// const root=createRoot(document.getElementById("root"));
+
+// function Page(){
+//   return(
+//     <Fragment>
+//         <header>
+//           <img className='logo' alt='React Image' src='/src/assets/react.svg'/>
+//         </header>
+//         <main>
+//           <h1>Reason why I love react</h1>
+//           <ol>
+//             <li>React is what I building projects in</li>
+//             <li>React is what I building projects in</li>
+//             <li>React is what I building projects in</li>
+//           </ol>
+//         <footer>
+//           <small>@ 20xx <last name here> development. All rights reserved</last></small>
+//         </footer>
+//         </main>
+//     </Fragment>
+  
+//   )
+  
+// }
+
+// root.render(
+//   <Page/>
+// )
+
+//one more way to do without the fragment import thing is
+//using the <></> bracket in place of <Fragment></Fragment> and 
+//not importing the fragment from react
+
+
+
+//CHALLANGE
+// Move the 'header' element fromt he page component 
+// into its own component called "Header"
+// Then render an instance of the Header component inside the Page componenet where the 'header' usdes to be 
+
 import './index.css'
 import { Fragment } from 'react';
 import {createRoot} from 'react-dom/client';
+import { Header } from '../components/Header';
+import { Main } from '../components/Main';
+import { Footer } from '../components/Footer'; 
+
 
 const root=createRoot(document.getElementById("root"));
 
 function Page(){
   return(
     <Fragment>
-        <header>
-          <img className='logo' alt='React Image' src='/src/assets/react.svg'/>
-        </header>
-        <main>
-          <h1>Reason why I love react</h1>
-          <ol>
-            <li>React is what I building projects in</li>
-            <li>React is what I building projects in</li>
-            <li>React is what I building projects in</li>
-          </ol>
-        <footer>
-          <small>@ 20xx <last name here> development. All rights reserved</last></small>
-        </footer>
-        </main>
+        <Header/>
+        <Main/>
+        <Footer/>
     </Fragment>
+    
   
   )
   
@@ -299,7 +337,3 @@ function Page(){
 root.render(
   <Page/>
 )
-
-//one more way to do without the fragment import thing is
-//using the <></> bracket in place of <Fragment></Fragment> and 
-//not importing the fragment from react

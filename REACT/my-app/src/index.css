@@ -9,6 +9,18 @@ h1{
 }
 .logo{
     display: block;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(20, 33, 33);
+    padding: 15px;
 }
