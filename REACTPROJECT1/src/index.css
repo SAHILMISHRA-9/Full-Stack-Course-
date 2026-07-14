@@ -1,0 +1,46 @@
+
+body{
+  object-fit: cover;
+  width: 92%;
+}
+
+.header{
+  background-color:  rgb(229, 245, 6);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 20px 20px 0 0;
+}
+.logo{
+  height: 30px;
+  width: 30px;
+}
+.article{
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  padding: 30px;
+}
+.head{
+  margin-left: 10px;
+}
+.low{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.photo{
+  height: 200px;
+  width: 200px;
+}
+.logo{
+  height: 30px;
+  width: 30px;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+span{
+  margin-right: 15px;
+
+}

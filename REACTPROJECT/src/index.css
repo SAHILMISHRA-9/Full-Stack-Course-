@@ -1,0 +1,39 @@
+.logo{
+    width: 95px;
+    height: 80px;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(174, 174, 255);
+    color: rgb(0, 0, 0);
+    height: 80px;
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: larger;
+    font-style: oblique;
+}
+li::marker{
+    color: rgb(144, 144, 221);
+    
+}
+li{
+    margin: 5px 0 ;
+    font-size: 1.3rem;
+    list-style-type: square;
+}
+#root{
+    background-image: url(./1.png) ;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: center 130% ;
+    background-color: antiquewhite;
+    height: 350px;
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+h1{
+    margin-left: 10px;
+}
