@@ -51,12 +51,22 @@ export function App(){
           //   src: entry.img.src,
           //   alt: entry.img.alt
           // }}
-          img= {entry.img}
-          country={entry.country}
-          title={entry.title}
-          googleMapsLink={entry.googleMapsLink}
-          dates={entry.dates}
-          text={entry.text}
+
+          key={entry.id}
+
+          // img= {entry.img}
+          // country={entry.country}
+          // title={entry.title}
+          // googleMapsLink={entry.googleMapsLink}
+          // dates={entry.dates}
+          // text={entry.text}
+
+          // when the amount of properties are very much passing
+          // each one of them is a hard so we use a single props
+          // entry={entry}
+
+          // Another way
+          {...entry}
       />
     )
   })
