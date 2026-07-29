@@ -1,6 +1,8 @@
+import React from "react"
+
 export function Body(){
     
-    const ingredient=["chicken","tomato","organo"]
+    const [ingredient, setIngredient]=React.useState([])
 
     const ingredientList=ingredient.map(ingredient =>(
         <li key={ingredient}>{ingredient}</li>
@@ -8,12 +10,9 @@ export function Body(){
 
     function handleSubmit(event){
         event.preventDefault()
-        // console.log('I was clicked')
         const Formdata= new FormData(event.currentTarget)
         const newingredient=Formdata.get("ingredient")
-        // console.log(newingredient)
-        ingredient.push(newingredient)
-        console.log(ingredient)
+        setIngredient(prevIngredients =>[...prevIngredients, newingredient])
     }
 
     return(

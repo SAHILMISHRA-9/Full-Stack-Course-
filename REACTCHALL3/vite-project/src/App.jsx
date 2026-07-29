@@ -1,3 +1,55 @@
+// starting from above now
+
+
+import React from "react";
+import avatar from "../public/user.png"
+
+export default function App(){
+  const [contact, setContact]=React.useState({
+    firstName: "Sahil",
+    lastName: "Mishra",
+    phone: "+1 (212) 555-1212",
+    email: "itsmyrealname@example.com",
+    isFavorite: true,
+  });
+
+  const starIcon = contact.isFavorite
+    ? "/star-filled.png"
+    : "/star-empty.png"
+
+  function toggleFavorite(){
+    setContact(prevContact=>({
+      ...prevContact,
+      isFavorite:!prevContact.isFavorite,
+    }))
+  }
+  return(
+    <main>
+      <article className="card">
+        <img 
+          src={avatar} 
+          className="User"
+          alt="User profile picture of Sahil"
+        />
+        <img
+          src={starIcon}
+          className="favorite"
+          alt={contact.isFavorite? "Empty star icon" : "Filled star icon"}
+          onClick={toggleFavorite}
+          aria-label={contact.isFavorite? "Remove from favorite" : "Add to Favorite"}
+        />
+
+        <h1>{contact.firstName} {contact.lastName}</h1>
+        <p>{contact.phone}</p>
+        <p>{contact.email}</p>
+      </article>
+    </main>
+  )
+
+}
+
+
+
 // import React from "react";
 
 // export default function App(){
@@ -107,3 +159,42 @@
 
 
 
+
+
+
+
+
+// import React from "react";
+
+// export default function App(){
+//   const [myFav, setMyFav]=React.useState([])
+
+//   const allFav = [
+//   "🐋🌺",
+//   "🐱",
+//   "💡🤍",
+//   "🔥🌿",
+//   "🏀🎁",
+//   "🦉",
+//   "🍎🍊",
+//   "📔🔔",
+//   "🥾🔔",
+//   "🥩🍳"];
+
+//   const thingElements=myFav.map(thing => <p key={thing}>{thing}</p>)
+
+//   function addFav(){
+//     setMyFav(
+//       prevFav=>[
+//         ...prevFav,
+//         allFav[prevFav.length]
+//       ]
+//     )
+//   }
+//   return (
+//     <main>
+//       <button onClick={addFav}>Add</button>
+//       <section>{thingElements}</section>
+//     </main>
+//   )
+// }
