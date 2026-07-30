@@ -3,6 +3,7 @@
 
 import React from "react";
 import avatar from "../public/user.png"
+import Star from "../../component/Star.jsx";
 
 export default function App(){
   const [contact, setContact]=React.useState({
@@ -13,9 +14,9 @@ export default function App(){
     isFavorite: true,
   });
 
-  const starIcon = contact.isFavorite
-    ? "/star-filled.png"
-    : "/star-empty.png"
+  // const starIcon = contact.isFavorite
+  //   ? "/star-filled.png"
+  //   : "/star-empty.png" now this should be used in the seperate star component 
 
   function toggleFavorite(){
     setContact(prevContact=>({
@@ -31,13 +32,15 @@ export default function App(){
           className="User"
           alt="User profile picture of Sahil"
         />
-        <img
+        {/* <img
           src={starIcon}
           className="favorite"
-          alt={contact.isFavorite? "Empty star icon" : "Filled star icon"}
+          alt={contact.isFavorite? "Filled star icon" : "Empty star icon"}
           onClick={toggleFavorite}
           aria-label={contact.isFavorite? "Remove from favorite" : "Add to Favorite"}
-        />
+        /> */}
+        {/* we did all this in a seperate file for reusability */}
+        <Star isFilled={contact.isFavorite} onClick={toggleFavorite}/>
 
         <h1>{contact.firstName} {contact.lastName}</h1>
         <p>{contact.phone}</p>
