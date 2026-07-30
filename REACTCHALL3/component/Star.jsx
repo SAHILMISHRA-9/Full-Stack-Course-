@@ -8,7 +8,7 @@ export default function Star(props){
           src={starIcon}
           className="favorite"
           alt={props.isFilled? "Filled star icon" : "Empty star icon"}
-          onClick={props.onClick}
+          onClick={props.handleClick}
           aria-label={props.isFilled? "Remove from favorite" : "Add to Favorite"}
         />
     )

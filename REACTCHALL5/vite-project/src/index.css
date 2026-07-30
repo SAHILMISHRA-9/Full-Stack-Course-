@@ -1,0 +1,52 @@
+/* 1. Force absolute reset on all parent wrappers to break Vite defaults */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #1c1c1c;
+  display: block !important; 
+}
+
+/* 2. Target the main element to center the grid perfectly */
+main {
+  display: flex !important;
+  justify-content: center !important; /* Forces horizontal centering */
+  align-items: center !important;     /* Forces vertical centering */
+  width: 100% !important;
+  height: 100vh !important;
+  box-sizing: border-box;
+}
+
+/* 3. The grid container for the pads */
+.pad-container {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 12px;
+  padding: 10px;
+}
+
+/* 4. Individual pad button styling */
+.pad-container button {
+  border: 4px solid #ffffff; /* Adds a clean, thick white border over the boxes */
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;    /* Ensures the border stays inside the 100px dimensions */
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  opacity: 0.1;
+}
+
+.pad-container button.on{
+  opacity: 1;
+}
+/* .pad-container button:hover {
+  opacity: 0.85;
+} */
+
+.pad-container button:active {
+  transform: scale(0.95);
+}

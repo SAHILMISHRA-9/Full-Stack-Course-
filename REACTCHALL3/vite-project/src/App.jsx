@@ -32,6 +32,7 @@ export default function App(){
           className="User"
           alt="User profile picture of Sahil"
         />
+
         {/* <img
           src={starIcon}
           className="favorite"
@@ -40,7 +41,8 @@ export default function App(){
           aria-label={contact.isFavorite? "Remove from favorite" : "Add to Favorite"}
         /> */}
         {/* we did all this in a seperate file for reusability */}
-        <Star isFilled={contact.isFavorite} onClick={toggleFavorite}/>
+        
+        <Star isFilled={contact.isFavorite} handleClick={toggleFavorite}/>
 
         <h1>{contact.firstName} {contact.lastName}</h1>
         <p>{contact.phone}</p>
