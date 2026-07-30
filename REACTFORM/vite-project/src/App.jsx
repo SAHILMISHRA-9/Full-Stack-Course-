@@ -21,18 +21,31 @@ export default function App(){
 
   // for it we use action method
 
+  // function SignUp(formData){
+  //   const email=formData.get("email")
+  //   const password=formData.get("password")
+  //   const radio=formData.get("consent")
+  //   // we use get all since it gave any one of the value
+  //   const gender=formData.getAll("gender")
+  //   const planet=formData.get("favPlanet")
+  //   console.log(email)
+  //   console.log(password)
+  //   console.log(radio)
+  //   console.log(gender)
+  //   console.log(planet)
+  // }
+
   function SignUp(formData){
-    const email=formData.get("email")
-    const password=formData.get("password")
-    const radio=formData.get("consent")
-    // we use get all since it gave any one of the value
+    // console.log(Object.fromEntries(formData))
+    // if all checked box items are not coming so we have to use this
+    
+    const data=Object.fromEntries(formData)
     const gender=formData.getAll("gender")
-    const planet=formData.get("favPlanet")
-    console.log(email)
-    console.log(password)
-    console.log(radio)
-    console.log(gender)
-    console.log(planet)
+    const allData={
+      ...data,
+      gender
+    }
+    console.log(allData)
   }
 
   return(
@@ -82,7 +95,7 @@ export default function App(){
           {/* to log into the console the radio button we need to pass the value to it otherwise it will log "on" or "null" */}
           <legend>Gender</legend>
           <label>
-            <input type="checkbox" name="gander" value="male"/>
+            <input type="checkbox" name="gender" value="male"/>
             Male
           </label>
 
@@ -100,7 +113,7 @@ export default function App(){
         
 
         <label htmlFor="favPlanet">What is you favorite planet?</label>
-        <select id="favPlanet" name="favPlanet" defaultValue="">
+        <select id="favPlanet" name="favPlanet" defaultValue= "">
           <option value="" disabled>-- Choose a Planet --</option>
           <option value="Earth">Earth</option>
           <option value="Venus">Venus</option>
