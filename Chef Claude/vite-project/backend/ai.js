@@ -1,17 +1,9 @@
-import { HfInference } from "@huggingface/inference"
-
-// const hf = new HfInference(process.env.HF_ACCESS_TOKEN)
-
-const hf = new HfInference(process.env.HF_ACCESS_TOKEN)
-// console.log("TOKEN:", process.env.HF_ACCESS_TOKEN);
-// console.log("ALL ENV:", process.env);
-
 const SYSTEM_PROMPT = `
 You are Chef Claude, an AI cooking assistant.
 
 You receive a list of ingredients that a user has.
 
-Suggest a delicious recipe using some or all of those ingredients.
+Suggest two or more delicious recipe using some or all of those ingredients.
 
 Your response should contain:
 
@@ -27,20 +19,42 @@ export async function getRecipeFromAI(ingredientsArr) {
   const ingredientsString = ingredientsArr.join(", ");
 
   try {
-    const response = await hf.textGeneration({
-  model: "google/flan-t5-large",
-  provider: "together", // 👈 required now
-  inputs: `Create a recipe using: ${ingredientsString}`,
-  max_new_tokens: 200,
-});
+    const response = await fetch(
+      "https://api.groq.com/openai/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: "llama-3.3-70b-versatile",
+          messages: [
+            { role: "system", content: SYSTEM_PROMPT },
+            {
+              role: "user",
+              content: `Create a recipe using: ${ingredientsString}`,
+            },
+          ],
+          max_tokens: 1024,
+        }),
+      }
+    );
 
-const result = response.generated_text;
+    const data = await response.json();
+
+    if (!response.ok) {
+      // Groq returns error details in data.error.message
+      throw new Error(data.error?.message || "Groq API request failed");
+    }
+
+    const result = data.choices?.[0]?.message?.content;
 
     console.log("AI RESULT:", result);
 
     return result || "No recipe generated.";
   } catch (err) {
     console.error("AI Error:", err);
-    return "Something went wrong. Please try again.";
+    throw err;
   }
 }

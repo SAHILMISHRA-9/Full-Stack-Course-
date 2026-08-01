@@ -1,77 +1,158 @@
-// import axios from "axios";
-import React from "react"
+import React from "react";
 import IngredientList from "./IngredientList";
-import ClaudeRecipe from "./ClaudeRecipe"
+import ClaudeRecipe from "./ClaudeRecipe";
 
-export function Body(){
-    const [recipe, setRecipe] = React.useState("")
-    const [loading, setLoading] = React.useState(false)
+export function Body() {
+  const [recipe, setRecipe] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
+  const [ingredient, setIngredient] = React.useState([]);
+  const [recipeShown, setRecipeShown] = React.useState(false);
 
-
-
-    
-    const [ingredient, setIngredient]=React.useState([])
-
-    const [recipeShown,setRecipeShown]=React.useState(false)
-
-    // function toggleRecipeShown(){
-    //     setRecipeShown(prevShown => !prevShown)
-    // }
-    
-    function addIngredient(formData){
-        const newingredient=formData.get("ingredient")
-        if(newingredient===""){
-            return;
-        }
-        setIngredient(prevIngredients =>[...prevIngredients, newingredient])
+  function addIngredient(formData) {
+    const newingredient = formData.get("ingredient");
+    if (newingredient === "") {
+      return;
     }
+    setIngredient((prevIngredients) => [...prevIngredients, newingredient]);
+  }
 
+  async function getRecipe() {
+    try {
+      setLoading(true);
+      setError("");
+
+      const res = await fetch("http://localhost:5000/api/recipe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ingredients: ingredient }),
+      });
+
+      const data = await res.json();
+      console.log("API RESPONSE:", data);
+
+      if (!res.ok || !data.recipe) {
+        throw new Error(data.error || "No recipe returned");
+      }
+
+      setRecipe(data.recipe);
+      setRecipeShown(true);
+    } catch (err) {
+      console.error("AI FULL ERROR:", err);
+      setError("Something went wrong generating your recipe. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <main>
+      <form className="form" action={addIngredient}>
+        <input
+          aria-label="Add ingredient"
+          type="text"
+          placeholder="e.g. oregano"
+          name="ingredient"
+        ></input>
+        <button type="submit">+ Add ingredient</button>
+      </form>
+
+      {ingredient.length > 0 ? (
+        <IngredientList ingredient={ingredient} getRecipe={getRecipe} />
+      ) : null}
+
+      {loading && <p>Generating Recipe...</p>}
+      {error && <p role="alert">{error}</p>}
+
+      {recipeShown ? <ClaudeRecipe recipe={recipe} /> : null}
+    </main>
+  );
+}
+
+
+
+
+
+
+
+
+
+// // import axios from "axios";
+// import React from "react"
+// import IngredientList from "./IngredientList";
+// import ClaudeRecipe from "./ClaudeRecipe"
+
+// export function Body(){
+//     const [recipe, setRecipe] = React.useState("")
+//     const [loading, setLoading] = React.useState(false)
+
+
+
+    
+//     const [ingredient, setIngredient]=React.useState([])
+
+//     const [recipeShown,setRecipeShown]=React.useState(false)
+
+//     // function toggleRecipeShown(){
+//     //     setRecipeShown(prevShown => !prevShown)
+//     // }
+    
+//     function addIngredient(formData){
+//         const newingredient=formData.get("ingredient")
+//         if(newingredient===""){
+//             return;
+//         }
+//         setIngredient(prevIngredients =>[...prevIngredients, newingredient])
+//     }
+
+
+// //     async function getRecipe() {
+// //     try {
+// //       setLoading(true);
+
+// //       const res = await axios.post("http://localhost:5000/api/recipe", {
+// //         ingredients: ingredient,
+// //       });
+
+// //       setRecipe(res.data.recipe);
+// //       setRecipeShown(true)
+// //     } catch (err) {
+// //       console.error(err);
+// //     } finally {
+// //       setLoading(false);
+// //     }
+// //   }
 
 //     async function getRecipe() {
-//     try {
-//       setLoading(true);
+//   try {
+//     setLoading(true);
 
-//       const res = await axios.post("http://localhost:5000/api/recipe", {
-//         ingredients: ingredient,
-//       });
+//     const res = await fetch("http://localhost:5000/api/recipe", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ ingredients: ingredient }),
+//     });
 
-//       setRecipe(res.data.recipe);
-//       setRecipeShown(true)
-//     } catch (err) {
-//       console.error(err);
-//     } finally {
-//       setLoading(false);
+//     const data = await res.json();
+//     console.log("API RESPONSE:", data); // 👈 MUST ADD
+//     if (!res.ok || !data.recipe) {
+//         throw new Error(data.error || "No recipe returned");
 //     }
+//     setRecipe(data.recipe);
+//     setRecipeShown(true);
+
+//   } catch (err) {
+//   console.error("AI FULL ERROR:", err);
+//   console.error("AI ERROR MESSAGE:", err.message);
+//   return "Something went wrong. Please try again.";
+// } finally {
+//     setLoading(false);
 //   }
-
-    async function getRecipe() {
-  try {
-    setLoading(true);
-
-    const res = await fetch("http://localhost:5000/api/recipe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ingredients: ingredient }),
-    });
-
-    const data = await res.json();
-    console.log("API RESPONSE:", data); // 👈 MUST ADD
-    if (!res.ok || !data.recipe) {
-        throw new Error(data.error || "No recipe returned");
-    }
-    setRecipe(data.recipe);
-    setRecipeShown(true);
-
-  } catch (err) {
-  console.error("AI FULL ERROR:", err);
-  console.error("AI ERROR MESSAGE:", err.message);
-  return "Something went wrong. Please try again.";
-} finally {
-    setLoading(false);
-  }
-}
+// }
 
 
 
@@ -80,29 +161,29 @@ export function Body(){
 
 
 
-    return(
-        <main>
-            <form className="form" action={addIngredient}>
-                <input 
-                    aria-label="Add ingredient" 
-                    type="text" 
-                    placeholder="e.g. organo"
-                    name="ingredient"
-                    >
-                </input>
-                <button  type="submit">+ Add ingredient</button>
-            </form>
+//     return(
+//         <main>
+//             <form className="form" action={addIngredient}>
+//                 <input 
+//                     aria-label="Add ingredient" 
+//                     type="text" 
+//                     placeholder="e.g. organo"
+//                     name="ingredient"
+//                     >
+//                 </input>
+//                 <button  type="submit">+ Add ingredient</button>
+//             </form>
 
-            {ingredient.length>0 ? 
-                <IngredientList ingredient={ingredient} /**toggleRecipeShown={toggleRecipeShown}**/  getRecipe={getRecipe}/> 
-            : null}
+//             {ingredient.length>0 ? 
+//                 <IngredientList ingredient={ingredient} /**toggleRecipeShown={toggleRecipeShown}**/  getRecipe={getRecipe}/> 
+//             : null}
 
-            {loading && <p>Generating Recipe...</p>}
+//             {loading && <p>Generating Recipe...</p>}
 
-            {recipeShown ? <ClaudeRecipe recipe={recipe} /> : null}
-        </main>
-    )
-}
+//             {recipeShown ? <ClaudeRecipe recipe={recipe} /> : null}
+//         </main>
+//     )
+// }
 
 
 
