@@ -8,11 +8,13 @@ export default function Body(){
     })
     
     function handleChange(event){
-        const {value} = event.currentTarget
-        setMeme((prevtop) =>{
-            prevtop=value
-        } 
-        )
+        const {value,name} = event.currentTarget
+        setMeme(prevMeme=>({
+            ...prevMeme,
+            // topText:value,
+            [name]:value
+
+        }))
     }
 
     return(
@@ -22,15 +24,18 @@ export default function Body(){
                     <input
                         type="text"
                         placeholder="one does not simply"
-                        name="Top Text"
+                        name="topText"
                         onChange={handleChange}
+                        value={meme.topText}
                     />
                 </label>
                 <label>Botton Text
                     <input 
                         type="text"
                         placeholder="Walk into Mordor"
-                        name="Botton Text"
+                        name="bottomText"
+                        onChange={handleChange}
+                        value={meme.bottomText}
                     />
                 </label>
                 <button>Generate a new meme image</button>
