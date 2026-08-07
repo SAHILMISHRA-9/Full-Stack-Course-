@@ -15,7 +15,15 @@ export default function Body(){
         .then(data=>setAllMemes(data.data.memes))
     },[])
 
-    
+    function getMemeImage(){
+        const randomNumber= Math.floor(Math.random() * allMemes.length)
+        const newMemeUrl=allMemes[randomNumber].url
+        setMeme(prevMeme=>({
+            ...prevMeme,
+            imageUrl: newMemeUrl
+        }))
+    }
+
     function handleChange(event){
         const {value,name} = event.currentTarget
         setMeme(prevMeme=>({
@@ -47,7 +55,7 @@ export default function Body(){
                         value={meme.bottomText}
                     />
                 </label>
-                <button>Generate a new meme image</button>
+                <button onClick={getMemeImage}>Generate a new meme image</button>
             </div>
             <div className="meme">
                 <img className="memeimg" src={meme.imageUrl}/>

@@ -9,6 +9,11 @@ export function Body() {
   const [ingredient, setIngredient] = React.useState([]);
   const [recipeShown, setRecipeShown] = React.useState(false);
 
+
+  const recipeSection=React.useRef(null)
+  React.useEffect(()=>)
+
+
   function addIngredient(formData) {
     const newingredient = formData.get("ingredient");
     if (newingredient === "") {
@@ -47,6 +52,8 @@ export function Body() {
     }
   }
 
+  
+
   return (
     <main>
       <form className="form" action={addIngredient}>
@@ -60,7 +67,10 @@ export function Body() {
       </form>
 
       {ingredient.length > 0 ? (
-        <IngredientList ingredient={ingredient} getRecipe={getRecipe} />
+        <IngredientList
+          ref={recipeSection} 
+          ingredient={ingredient} 
+          getRecipe={getRecipe} />
       ) : null}
 
       {loading && <p>Generating Recipe...</p>}
