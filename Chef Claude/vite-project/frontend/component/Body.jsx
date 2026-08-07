@@ -11,7 +11,11 @@ export function Body() {
 
 
   const recipeSection=React.useRef(null)
-  React.useEffect(()=>)
+  React.useEffect(()=>{
+    if(recipe !== "" && recipeSection.current !== null){
+      recipeSection.current.scrollIntoView()
+    }
+  },[recipe])
 
 
   function addIngredient(formData) {
