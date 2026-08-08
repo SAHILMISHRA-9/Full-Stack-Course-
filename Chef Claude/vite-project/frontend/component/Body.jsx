@@ -13,7 +13,8 @@ export function Body() {
   const recipeSection=React.useRef(null)
   React.useEffect(()=>{
     if(recipe !== "" && recipeSection.current !== null){
-      recipeSection.current.scrollIntoView()
+      recipeSection.current.scrollIntoView({behaviour: "smooth"})
+      // const yCoord=recipeSection.current.getBoundingClientRect().to
     }
   },[recipe])
 

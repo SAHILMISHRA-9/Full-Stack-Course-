@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content:center;
+}
+
+.header{
+    color: white;
+    text-align: center;
+    margin: 50px;
+}
+
+.result{
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.Techstack{
+    text-align: center;
+    button{
+        padding: 10px;
+    }
+}
