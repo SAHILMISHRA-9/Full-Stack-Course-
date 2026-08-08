@@ -3,10 +3,26 @@ import { languages } from '../assets/language'
 import './App.css'
 
 function App() {
-
   const [currentWord,setCurrentWord]=useState("react")
-  
-  const letterElements=
+
+  const lanngaugeElements=languages.map(lang=>{
+    return(
+      <button 
+        style={{
+          backgroundColor: lang.backgroundColor,
+          color: lang.color,
+        }}
+      >
+        {lang.name}
+      </button>
+    )
+  })
+
+  const keyboards="abcefghijklmnopqrstuvxyz"
+
+  const letterElements=currentWord.split("").map(letter=>(
+    <span>{letter.toUpperCase()}</span>
+  ))
 
 
   return (
@@ -24,22 +40,16 @@ function App() {
       </section>
 
       <section className='Techstack'>
-        {languages.map((label)=>(
-          <button 
-          style={{
-            backgroundColor: label.backgroundColor,
-            color: label.color,
-          }}
-          >
-            {label.name}
-          </button>
-        ))}
+        {lanngaugeElements}
       </section>
 
-      <span>
+      <section className="word">
+        {letterElements}
+      </section>
 
-      </span>
-  
+      <section>
+
+      </section>
     </main>
   )
 }

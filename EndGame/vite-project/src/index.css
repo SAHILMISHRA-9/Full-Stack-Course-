@@ -30,3 +30,22 @@ body{
         padding: 15px;
     }
 }
+
+.word{
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 30px;
+    padding: 10px;
+}
+
+.word > span{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(83, 82, 82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid white;
+}
