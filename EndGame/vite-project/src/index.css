@@ -16,7 +16,7 @@ body{
     border: 1px solid black;
     text-align: center;
     margin-bottom: 50px;
-    /* border-radius: 50px; */
+    border-radius: 10px;
 }
 
 .Techstack{
@@ -28,6 +28,7 @@ body{
     margin: 0 auto;
     button{
         padding: 15px;
+        border-radius: 3px;
     }
 }
 
@@ -36,7 +37,7 @@ body{
     display: flex;
     justify-content: center;
     gap: 5px;
-    margin: 30px;
+    margin: 40px 40px 20px 40px;
     padding: 10px;
 }
 
@@ -48,4 +49,44 @@ body{
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid white;
+    border-radius: 3px;
 }
+
+.keyboard{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width:450px;
+    height: auto;
+    justify-content: center;
+    gap: 8px;
+}
+
+.keyboard > button{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(230, 161, 11);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.keyboard >button.correct{
+    background-color: #10A95B;
+}
+.keyboard >button.wrong{
+    background-color: #EC5D49;
+}
+
+.newgame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newgame > button{
+    margin: 40px;
+    height: 40px;
+    width: 180px;
+    background-color: skyblue;
+    border-radius: 5px;
+}
+
