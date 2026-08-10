@@ -9,10 +9,12 @@ function App() {
   const [guessedletter,setGuessedLetter]=useState([])
 
   // Derived value
-  const wrongGuessArray= guessedletter.filter(letter =>
+  const wrongGuessCount= guessedletter.filter(letter =>
     !currentWord.includes(letter)
-  ) 
-  console.log(wrongGuessArray)
+  ).length
+  const isGameWon=currentWord.split("").every(letter=>guessedletter.includes(letter))
+  const isGameLost=wrongGuessCount>=languages.length-1
+  const isGameOver= isGameLost || isGameWon
 
   // static values
   const alphabets="abcdefghijklmnopqrstuvwxyz"
@@ -28,9 +30,12 @@ function App() {
   }
 
   // use to fetch the languages from the .js file along with the property
-  const lanngaugeElements=languages.map(lang=>{
+  const lanngaugeElements=languages.map((lang,index)=>{
+    const isLost=wrongGuessCount>index
+    const className=clsx("chip",isLost && "lost")
     return(
       <button
+        className={className}
         key={lang.name}
         style={{
           backgroundColor: lang.backgroundColor,
@@ -69,7 +74,31 @@ function App() {
     )
   })
 
+  // clsx for game status
+  const gameResult=clsx('result',{
+    won:isGameWon,
+    lost:isGameLost,
+  })
 
+  function renderGameResult(){
+    if(!isGameOver) return null
+
+    if(isGameWon){
+      return(
+        <>
+          <h1>You Won</h1>
+          <p>Well DOne !</p>
+        </>
+      )
+    }else{
+      return(
+        <>
+          <h2>Game Over!</h2>
+          <p>You lose! Better start learning Assembly</p>
+        </> 
+      )
+    }
+  }
 
   return (
     <main>
@@ -80,9 +109,8 @@ function App() {
           keep the program word safe from Assembly</p>
       </header>
 
-      <section className='result'>
-        <h2>Game Over!</h2>
-        <p>You lose! Better start learning Assembly</p>
+      <section className={gameResult}>
+        {renderGameResult()}
       </section>
 
       <section className='Techstack'>
@@ -98,7 +126,7 @@ function App() {
       </section>
 
       <section className='newgame'>
-        <button>New Game</button>
+        {isGameOver==true && <button>New Game</button>}
       </section>
     </main>
   )

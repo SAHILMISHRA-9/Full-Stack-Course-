@@ -11,12 +11,17 @@ body{
 }
 
 .result{
-    background-color: red;
     color: white;
     border: 1px solid black;
     text-align: center;
     margin-bottom: 50px;
     border-radius: 10px;
+}
+.result.won{
+    background-color: rgb(61, 255, 47);
+}
+.result.lost{
+    background-color: red;
 }
 
 .Techstack{
@@ -26,10 +31,30 @@ body{
     justify-content: center; 
     text-align: center;
     margin: 0 auto;
+    gap: 4px;
     button{
         padding: 15px;
         border-radius: 3px;
+        
     }
+}
+.chip{
+    position: relative;
+    overflow: hidden;
+}
+.chip.lost::before{
+    content: "💀";
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 0.85rem;
+
+    z-index: 1;
 }
 
 .word{
