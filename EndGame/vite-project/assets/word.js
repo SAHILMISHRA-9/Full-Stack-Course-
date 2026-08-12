@@ -408,6 +408,7 @@ export const words = [
   "stocking",
   "stomach",
   "stone",
+  "avenger",
   "store",
   "story",
   "straight",
