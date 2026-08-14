@@ -1,7 +1,4 @@
-// import React from "react"
-export default function IngredientList(props){
-
-    
+export default function IngredientList({ ref, ...props }){
 
     const ingredientList=props.ingredient.map(ingredient =>(
         <li key={ingredient}>{ingredient}</li>
@@ -11,7 +8,7 @@ export default function IngredientList(props){
             <h2>Ingredients on hand:</h2>
             <ul className="ingredients-list" aria-live="polite">{ingredientList}</ul><br />
             {props.ingredient.length>3 ? <div className="get-recipe-container">
-                <div ref={props.ref}>
+                <div ref={ref}>
                     <h3>Ready for a recipe?</h3>
                     <p>Genreate a recipe from your list of ingredients.</p>
                     </div>
