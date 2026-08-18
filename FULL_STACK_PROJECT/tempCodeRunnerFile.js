@@ -1,1 +1,0 @@
-const __dirname=import.meta.dirname
