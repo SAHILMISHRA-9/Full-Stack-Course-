@@ -5,7 +5,11 @@ export default function ProductDetailsLayout({
 }){
     return( <>
     {children}
-    <h2>Featured proucts</h2>
+    <h2
+        style={{
+            backgroundColor:"lavender"
+        }}
+    >Featured proucts</h2>
     </>
     );
 }
