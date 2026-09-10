@@ -21,6 +21,10 @@ export const generateMetadata=async({
 export default async function prodoctDetails({params}:Props){
     const productId=(await params).productId;
     return(
-        <h1>product details {productId}</h1>
+        <>
+            
+            <h1>product details {productId}</h1>
+        </>
+        
     )
 }
