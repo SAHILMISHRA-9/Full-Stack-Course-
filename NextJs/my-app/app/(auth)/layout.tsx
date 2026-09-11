@@ -1,4 +1,4 @@
-"use Client";
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -19,8 +19,13 @@ export default function AuthLayout({
             {navLinks.map((link)=>{
                 const isActive= pathName=== link.href || (pathName.startsWith(link.href) && link.href!== "/");
                 return(
-                    <Link href={link.href} key={link.name}>
-                        {link.name}
+                    <Link 
+                        className={isActive? "font-bold mr-4": "text-blue-500 mr-4"} 
+                        href={link.href} 
+                        key={link.name}
+                        // className="text-red-500 font-bold text-2xl mr-4"
+                        >
+                            {link.name}
                     </Link>
                 );
             })}
