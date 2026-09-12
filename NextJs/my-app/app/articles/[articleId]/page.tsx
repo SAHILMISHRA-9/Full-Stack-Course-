@@ -37,9 +37,9 @@ export default function NewsArticle({params,searchParams}:{
             <h1 className="text-4xl font-bold">News article {articleId}</h1>
             <p className="mt-4">Reading in {lang}</p>
             <div className="mt-4">
-                <Link className="mr-4 text-green-500" href={`/articles/${articleId}?lang=en`}>English</Link>
-                <Link className="mr-4 text-green-500" href={`/articles/${articleId}?lang=es`}>Spanish</Link>
-                <Link className="mr-4 text-green-500" href={`/articles/${articleId}?lang=fr`}>French</Link>
+                <Link className="mr-4 text-blue-500" href={`/articles/${articleId}?lang=en`}>English</Link>
+                <Link className="mr-4 text-blue-500" href={`/articles/${articleId}?lang=es`}>Spanish</Link>
+                <Link className="mr-4 text-blue-500" href={`/articles/${articleId}?lang=fr`}>French</Link>
             </div>
         </div>
     )
