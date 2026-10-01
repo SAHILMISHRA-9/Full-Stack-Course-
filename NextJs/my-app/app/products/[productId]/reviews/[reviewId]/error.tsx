@@ -1,5 +1,5 @@
 "use client"
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { startTransition } from "react";
 // Error boundary must be client component
 export default function ErrorBoundary({error, reset}:{
