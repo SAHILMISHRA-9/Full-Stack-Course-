@@ -1,7 +1,7 @@
 export default function ProductDetailsLayout({
     children,
 }:{
-    Children:React.ReactNode;
+    children:React.ReactNode;
 }){
     return( <>
     {children}
