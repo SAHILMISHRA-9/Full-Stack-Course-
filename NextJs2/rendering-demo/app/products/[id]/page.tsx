@@ -10,7 +10,7 @@ export default async function ProductPage({
     const { id } =await params;
     return(
         <h1>
-            Product {id} details rendered at {new Date().toLocaleTimeString()};
+            Product {id} details are rendered at {new Date().toLocaleTimeString()};
         </h1>
     );
 }
