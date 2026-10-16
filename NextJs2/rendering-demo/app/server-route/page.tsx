@@ -1,7 +1,9 @@
 import { serverSideFunction } from "../utils/server-utils"
 
+import { ClientSideFunction } from "../utils/client-utils"
 
 export default function ServerRoutePage(){
     const result=serverSideFunction()
-    return <h1>Server Route- {result}</h1>
+    const clientResult= ClientSideFunction()
+    return <h1>Server Route- {result} - {clientResult}</h1>
 }
