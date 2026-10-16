@@ -1,9 +1,10 @@
-import { serverSideFunction } from "../utils/server-utils"
+import { serverSideFunction } from "../../utils/server-utils"
 
-import { ClientSideFunction } from "../utils/client-utils"
+// import { ClientSideFunction } from "../../utils/client-utils"
 
 export default function ServerRoutePage(){
     const result=serverSideFunction()
-    const clientResult= ClientSideFunction()
-    return <h1>Server Route- {result} - {clientResult}</h1>
+    // const clientResult= ClientSideFunction()
+    return <h1>Server Route- {result}</h1>
+    // return <h1>Server Route- {result} - {clientResult}</h1>
 }
