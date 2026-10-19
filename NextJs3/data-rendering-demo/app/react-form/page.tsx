@@ -21,21 +21,21 @@ export default function CreateProduct(){
                 body: JSON.stringify({title,price,description}),
             });
             if(response.ok){
-                router.push("/product-db");
+                router.push("/products-db");
             }
         } catch (error){
             console.error("Error:",error);
         } finally {
             setLoading(false);
         };
-
+}
         return(
             <form onSubmit={handleSubmit} className="p-4 space-y-4 max-w-96">
                 <label className="text-white">
                     Title
                     <input
                         type="text"
-                        className="block w-full p-2 text-black border rounded"
+                        className="block w-full p-2 text-black bg-white border rounded"
                         name="title"
                         onChange={(e) => setTitle(e.target.value)}
                     />
@@ -44,7 +44,7 @@ export default function CreateProduct(){
                     Price
                     <input
                         type="number"
-                        className="block w-full p-2 text-black border rounded"
+                        className="block w-full p-2 text-black bg-white border rounded"
                         name="price"
                         onChange={(e) => setPrice(e.target.value)}
                     />
@@ -52,21 +52,18 @@ export default function CreateProduct(){
                 <label className="text-white">
                     Description
                     <textarea
-                        className="block w-full p-2 text-black border rounded"
+                        className="block w-full p-2 text-black bg-white border rounded"
                         name="description"
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </label>
-                <label>
-                    <button
-                        type="submit"
-                        className="block w-full p-2 text-white bg-blue-500 rounded disabled:bg-gray-500"
-                        disabled={loading}
-                    >
-                        {loading ? "Submitting..." : "Submit"}
-                    </button>
-                </label>
+                <button
+                    type="submit"
+                    className="block w-full p-2 text-white bg-blue-500 rounded disabled:bg-gray-500"
+                    disabled={loading}
+                >
+                    {loading ? "Submitting..." : "Submit"}
+                </button>
             </form>
         );
     }
-}
