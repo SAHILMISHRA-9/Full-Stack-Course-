@@ -1,4 +1,4 @@
-import { getProduct, getProducts } from "../prisma-db"
+import { getProducts } from "../prisma-db"
 
 type Product={
     id:number,
