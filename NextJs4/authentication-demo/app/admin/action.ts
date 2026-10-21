@@ -1,4 +1,4 @@
-"user server"
+"use server"
 
 import { Roles } from "@/types/globals"
 import { auth, clerkClient } from "@clerk/nextjs/server"
