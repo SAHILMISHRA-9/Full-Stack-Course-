@@ -22,7 +22,7 @@ export async function getRecipeFromAI(ingredientsArr) {
     const response = await fetch(
       "https://api.groq.com/openai/v1/chat/completions",
       {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
