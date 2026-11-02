@@ -28,7 +28,7 @@ export async function getRecipeFromAI(ingredientsArr) {
           Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
         },
         body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
+          model: MODEL,
           messages: [
             { role: "system", content: SYSTEM_PROMPT },
             {
@@ -36,7 +36,7 @@ export async function getRecipeFromAI(ingredientsArr) {
               content: `Create a recipe using: ${ingredientsString}`,
             },
           ],
-          max_tokens: 2024,
+          max_tokens: 4096,
         }),
       }
     );
