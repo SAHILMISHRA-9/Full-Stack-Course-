@@ -15,6 +15,8 @@ Your response should contain:
 Format your answer in markdown.
 `;
 
+const MODEL = "openai/gpt-oss-120b";
+
 export async function getRecipeFromAI(ingredientsArr) {
   const ingredientsString = ingredientsArr.join(", ");
 
